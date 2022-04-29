@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{color}
+
+\title{\Huge{\textcolor{blue}{\textbf{Aires et périmètres des figures de base}}}}
+\author{\Huge{Poumier Antonin}}
+\date{\Huge{\today}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\LaTeX}
+\fancyhead[R]{Université Paris 8}
+\fancyfoot[C]{Outils Collaboratifs}
+\fancyfoot[R]{\today}
+\begin{document}
+
+\maketitle
+\begin{figure}[b]
+	\centering
+	\includegraphics[scale=0.5]{paris8.png}
+\end{figure}
+\newpage
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+\large{Nous allons voir les différentes formules pour calculer l'aire et le périmètre des figures suivantes.}
+\begin{enumerate}
+	\item Les carrés
+	\item Les rectangles
+	\item Les triangles
+	\item Les cercles/disques 
+\end{enumerate}
+\section{\large{Aires}}
+	\subsection{\large{Aires de ces figures}} 
+		\large{Pour calculer l'aire de ces figures, il existe plusieurs formules.}
+		\begin{equation}
+			A_c = c \times c 
+		\end{equation}
+		\begin{equation}
+		A_r = L \times l 
+		\end{equation}
+		\begin{equation}
+		A_t = \frac{base \times hauteur}{2}
+		\end{equation}
+		\begin{equation}
+		A_d = \Pi\,\times\,R\,\times\,R\
+		\label{4}
+		\end{equation}
+		Exemple pour un disque de rayon 4 cm on a :
+		\begin{equation}
+			\Pi\,\times\,4\,\times\,4\,=\,16\,\times\,\Pi\,cm^{2}\approx\,50,24\,cm^{2}
+		\end{equation}
+		Attention, il faut arrondir les valeurs de la formule \ref{4} ! \\
+	\subsection{\large{Représentation de quelques figures}}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.5]{figures.png}
+		\caption{\large{Carré et rectangle}}
+	\end{figure}
+
+
+\section{\large{Périmètre}}
+\subsection{\large{Périmètre de ces figures}}
+		\large{Pour calculer le périmètre de ces figures, il existe plusieurs formules.}
+\begin{equation}
+	A_c = 4 \times c 
+\end{equation}
+\begin{equation}
+	A_r = (2 \times L) + (2 \times l) 
+\end{equation}
+\begin{equation}
+	A_t = L1 + L2 + L3
+\end{equation}
+\begin{equation}
+	A_d = 2 \times\Pi\times R
+	\label{9}
+\end{equation}
+Exemple pour un cercle de rayon 4 cm on a :
+\begin{equation}
+	2 \times \Pi \times 4 \approx 25,13 \\
+\end{equation} 
+Attention, il faut arrondir les valeurs de la formule \ref{9} ! \\
+\subsection{\large{Représentation d'autres figures}}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{figures2.png}
+	\caption{\large{Triangle et cercle}}
+\end{figure}
+    \begin{center}
+	 C'est Archimède\cite{fleurs}, fils de l'astronome Phidias, mathématicien grec vivant à Syracuse\footnote{Ville italienne de la côte ionienne, en Sicile, faisant partie de la Grande Grèce à l'époque.}(287 av. J.-C./212 av. J.-C.)  qui est la première personne à démontrer vers 250 avant J. -C les formules du cercle et la constante Pi qui interviennent dans le calcul de l'aire et du périmètre.  
+\end{center}
+\begin{thebibliography}{1}
+	\bibitem{fleurs} https://www.histoiredumonde.net/Archimede.html
+\end{thebibliography}
+\section{\large{Algorithme en Python}}
+\begin{table}[h]
+	\begin{tabular}{l|c|r}
+		Carré & Rectangle \\ \hline
+\begin{lstlisting}[language=python]
+def perimetrecarre(c):
+	p = 4 * c
+	return p
+\end{lstlisting}&
+\begin{lstlisting}[language=python]
+def perimetrerectangle(L,l):
+	p = (2 * L) + (2 * l)
+	return p
+\end{lstlisting}
+	\end{tabular}
+	\caption{Carré et Rectangle}
+\end{table}
+\begin{table}[h]
+	\begin{tabular}{l|c|r}
+		Triangle & Cercle \\ \hline
+\begin{lstlisting}[language=python]
+def perimetretriangle(L1,L2,L3):
+	p = L1 + L2 + L3
+	return p
+\end{lstlisting}&
+\begin{lstlisting}[language=python]
+from math import *
+def perimetrecercle(r):
+	p = 2 * pi * r
+	return p
+\end{lstlisting}
+	\end{tabular}
+\caption{Triangle et Cercle}
+\end{table}
+\end{document}
+
+
